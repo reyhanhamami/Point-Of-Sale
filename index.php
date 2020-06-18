@@ -108,8 +108,9 @@ body{
 <script>
 $(document).ready(function(){
     $('.tambahpesan').click(function(){
+        // get harga 
         var harga = $(this).attr('id');
-    
+
         a = `
         <tr id="">
             <td>
@@ -120,8 +121,10 @@ $(document).ready(function(){
             </td>
         </tr>
         `;
+        // menambahkan isi 
         $("#isipesan").append(a);
 
+    // isinya ditambahin biar jadi total
     var totalSum = 0;
       $('.isi').each(function() {
         var inputVal = $(this).val();
@@ -134,9 +137,9 @@ $(document).ready(function(){
       $("#total").val(totals).trigger('change');
       $("#tot").val(totals).trigger('change');
 
+    //   untuk kembalian 
       $('#yar').change(function(){
         var bay = $(this).val();
-
         var kemba = bay - totals;
         $("#kem").val(kemba).trigger('change');
       });
